@@ -1,9 +1,29 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
+posts = [ 
+    {   'author': 'Listya W',
+        'title': 'Maximorphimus',
+        'content': 'Maximus Journal',
+        'date_posted': ' 02 April 2019'},
+    {
+        'author': 'Jane Doe',
+        'title': 'Wuthering Heights',
+        'content': 'A novel',
+        'date_posted': ' 02 April 2018'
+    },
+
+    {
+        'author': 'Raditya Purnama',
+        'title': 'Kenallah Aku Dengan Nama Adrian',
+        'content': 'Cerita tentang Adrian',
+        'date_posted': ' 08 August 2019'
+    }
+]
+
 @app.route("/")
-def hello ():
-    return "<h1>Hello, world. Why cant i display about page?</h1>"
+def home ():
+    return render_template('home.html', posts=posts)
 
 @app.route("/about")
 def about ():
