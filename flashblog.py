@@ -32,10 +32,10 @@ def home ():
 def about ():
     return "<h1>About Page</h1>"
 
-@app.route("/registration", methods=['GET', 'POST'])
-def registration ():
+@app.route("/register", methods=['GET', 'POST'])
+def registers ():
     form = RegistrationForm()
-    return render_template('register.html', title='register', form=form)
+    return render_template('register.html', title='Register', form=form)
 
 @app.route("/login")
 def login ():
